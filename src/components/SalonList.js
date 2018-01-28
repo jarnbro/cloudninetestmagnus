@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import SalonListItem from "./SalonListItem";
+import SingleSalon from "./SingleSalon";
 import SalonFilterSelect from "./SalonFilterSelect";
+import Header from "./Header";
+
 
 
 import data from '../data.json';
@@ -8,7 +11,8 @@ import data from '../data.json';
 class SalonList extends Component {
     state = {
         salons: [],
-        selectOptionValue:'hihi'
+        selectOptionValue: [200,300,400,500,600,700,800,900,1000,1100],
+        currentSalon:null
     }
 
     fetchAllSalons = () => {
@@ -19,8 +23,13 @@ class SalonList extends Component {
         this.fetchAllSalons();
     }
     
-    onClickSalon = () => {
-
+    salonOnClick = (x) => {
+        let thisSalon = [...this.state.salons].filter((elem)=>{
+            return elem.id === x;
+        });
+        this.setState({
+            currentSalon:thisSalon[0]
+        });
     }
 
     handleSelectOnChange = (e) => {
@@ -30,22 +39,41 @@ class SalonList extends Component {
     }
 
     render() {
-        const { salons, selectOptionValue } = this.state;
+        const { salons, selectOptionValue, currentSalon } = this.state;
         const renderListOfSalons = [...salons].map((elem, key)=>{
-            return <SalonListItem key={key} />
+            if(selectOptionValue.includes(elem.price)){
+                return <SalonListItem id={elem.id} 
+                    onClick = {()=> this.salonOnClick(elem.id)} name={elem.name} rating={elem.rating} adress={elem.adress} price={elem.price} appointmentTime={elem.appointmentTime} key={key} />;
+            }
         });
 
         return (
-        <section className='salon-list'>
-            <ul>
+        <section className='salon-list-section'>
+            {!currentSalon && <Header/>}
+            <ul className='salon-list'>
+                {!currentSalon &&
                 <select onChange = {this.handleSelectOnChange}>
-                    <option value = "200-300" >Pris 200 kr - 300kr</option>
-                    <option value = "400-500" >Pris 400 kr - 500kr</option>
-                    <option value = "600-700" >Pris 600 kr - 700kr</option>
-                    <option value = "600-up" >Pris 200 kr - 300kr</option>
+                    <option value = {[200,300,400,500,600,700,800,900,1000,1100]} >Alla prisklasser</option>
+                    <option value = {[200,300]} >Pris 200 kr - 300kr</option>
+                    <option value = {[400,500]} >Pris 400 kr - 500kr</option>
+                    <option value = {[600,700]} >Pris 600 kr - 700kr</option>
+                    <option value = {[800,900,1000,1100]} >Pris 800 kr och uppåt </option>
                 </select>
-                {renderListOfSalons}
-                <h1>{selectOptionValue}</h1>
+                }
+                {!currentSalon && renderListOfSalons}
+                {currentSalon && <SingleSalon 
+                    
+                    name = {currentSalon.name}
+                    adress = {currentSalon.adress}
+                    openUntil = {currentSalon.openingHours[1]}
+                    websiteUrl = {currentSalon.websiteUrl}
+                    presentationText = {currentSalon.presentationText}
+                    teleNumber = {currentSalon.teleNumber}
+                    mapsUrl = {currentSalon.mapsUrl}
+                    imageUrl = {currentSalon.imageUrl}
+
+                />}
+                
             </ul>
         </section>
         );

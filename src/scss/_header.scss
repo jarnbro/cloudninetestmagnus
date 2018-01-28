@@ -1,0 +1,12 @@
+header {
+    height: 4rem;
+    width:100%;
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+    
+    h1 {
+        font-family: MillerBannerLight;
+    }
+}
+

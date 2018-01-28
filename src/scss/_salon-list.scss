@@ -1,0 +1,44 @@
+@import 'global'; 
+
+.salon-list-section {
+    select {
+        border:none;
+        border-radius:0%;
+        width:100%;
+        height: 2rem;
+        background:white;
+        @include flex(row);
+        justify-content: center;
+        align-items: center;
+        border-bottom:1px solid $beige;
+        border-top:1px solid $beige;
+    } 
+
+    ul {
+        list-style-type:none;
+        width:100%;
+        padding: 0;
+        margin:0;
+
+        li {
+            position: relative;
+            @include flex(row);
+            justify-content: space-between;
+            align-items:flex-start; 
+            padding:1rem;
+            width: 100;
+            cursor:pointer;
+        }
+        .salon-list-item-content-center {
+            margin-left:-30%;
+            h4 {
+                margin:0.75rem 0 0 0;
+                font-size: 20px;
+            }
+            p {
+                font-size: 15px;
+                font-family: 'Helvetica';
+            }
+        }
+    }
+}

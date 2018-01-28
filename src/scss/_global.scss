@@ -1,0 +1,47 @@
+//Variables
+$purple:purple;
+$beige:#B69F58;
+$grey:#202020;
+//Mixins
+@mixin flex($flex-dir) {
+    display: flex;
+    flex-direction: $flex-dir;
+}
+
+//Fonts
+@font-face {
+    font-family: MillerBannerLight;
+    src: url("./fonts/MillerBannerLight.otf") format("opentype");
+}
+
+html, body {
+    margin:0;
+    padding:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: MillerBannerLight;
+    color:$grey;
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+p, a {
+    font-family: 'Helvetica';
+    color:$grey;
+    font-weight: 200;
+}
+
+hr {
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    height: 0.2px;
+    width:90%;
+    background:lightgrey;
+    border-radius: 20px;
+}
