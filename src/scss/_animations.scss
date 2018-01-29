@@ -1,0 +1,17 @@
+//React transitions
+.trans-enter {
+    opacity: 0.01;
+  }
+  .trans-enter.trans-enter-active {
+    opacity: 1;
+    transition:2000ms ease-out;
+  }
+  
+  .trans-leave {
+    opacity: 1;
+  }
+  
+  .trans-leave.trans-leave-active {
+    opacity: 0.01;
+    transition: 2000ms ease-out;
+  }

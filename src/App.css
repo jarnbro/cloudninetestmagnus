@@ -270,3 +270,17 @@ header {
         bottom: -15%; }
       .single-salon-section .salon-info-section div:last-child hr {
         display: none; }
+
+.trans-enter {
+  opacity: 0.01; }
+
+.trans-enter.trans-enter-active {
+  opacity: 1;
+  transition: 2000ms ease-out; }
+
+.trans-leave {
+  opacity: 1; }
+
+.trans-leave.trans-leave-active {
+  opacity: 0.01;
+  transition: 2000ms ease-out; }
