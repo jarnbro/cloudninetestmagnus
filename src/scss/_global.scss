@@ -2,6 +2,7 @@
 $purple:purple;
 $beige:#B69F58;
 $grey:#202020;
+$lightgrey: #656565;
 //Mixins
 @mixin flex($flex-dir) {
     display: flex;
@@ -38,11 +39,29 @@ p, a , select{
 
 hr {
     position:absolute;
-    bottom:0;
+    bottom:-6%;
     left:50%;
     transform:translateX(-50%);
-    height: 0.2px;
+    height: 1px;
     width:90%;
     background:lightgrey;
     border-radius: 20px;
+    border:none;
+}
+
+.rating-stars {
+    .rating-stars-container {
+        @include flex(row);
+        justify-content: flex-start;
+        align-items: center;
+        p {
+            font-size: 13px;
+            margin-left: 0.5rem;
+            color:$lightgrey;
+        }
+        svg {
+            margin-right:0.1rem;
+        }
+
+    }
 }

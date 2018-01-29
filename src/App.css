@@ -22,13 +22,26 @@ p, a, select {
 
 hr {
   position: absolute;
-  bottom: 0;
+  bottom: -6%;
   left: 50%;
   transform: translateX(-50%);
-  height: 0.2px;
+  height: 1px;
   width: 90%;
   background: lightgrey;
-  border-radius: 20px; }
+  border-radius: 20px;
+  border: none; }
+
+.rating-stars .rating-stars-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; }
+  .rating-stars .rating-stars-container p {
+    font-size: 13px;
+    margin-left: 0.5rem;
+    color: #656565; }
+  .rating-stars .rating-stars-container svg {
+    margin-right: 0.1rem; }
 
 .salon-list-section .select-wrapper {
   display: flex;
@@ -52,7 +65,8 @@ hr {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem; }
+  font-size: 1rem;
+  color: #656565; }
 
 .salon-list-section ul {
   list-style-type: none;
@@ -65,8 +79,9 @@ hr {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
     width: 100;
+    height: auto;
     cursor: pointer; }
     .salon-list-section ul li:nth-child(2) {
       border-top: 1px solid #B69F58; }
@@ -81,6 +96,9 @@ hr {
         margin-bottom: 4rem; }
   .salon-list-section ul .salon-list-item-content-center {
     margin-left: -10%; }
+    .salon-list-section ul .salon-list-item-content-center p.adress-p {
+      margin-top: 0.1rem;
+      color: #656565; }
   .salon-list-section ul .salon-list-item-content-right {
     display: flex;
     flex-direction: column;
@@ -94,7 +112,8 @@ hr {
     .salon-list-section ul .salon-list-item-content-right :last-child {
       font-weight: 200;
       font-size: 13px;
-      margin-top: 0; }
+      margin-top: 0;
+      color: #656565; }
 
 @font-face {
   font-family: MillerBannerLight;
@@ -120,13 +139,26 @@ p, a, select {
 
 hr {
   position: absolute;
-  bottom: 0;
+  bottom: -6%;
   left: 50%;
   transform: translateX(-50%);
-  height: 0.2px;
+  height: 1px;
   width: 90%;
   background: lightgrey;
-  border-radius: 20px; }
+  border-radius: 20px;
+  border: none; }
+
+.rating-stars .rating-stars-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; }
+  .rating-stars .rating-stars-container p {
+    font-size: 13px;
+    margin-left: 0.5rem;
+    color: #656565; }
+  .rating-stars .rating-stars-container svg {
+    margin-right: 0.1rem; }
 
 header {
   height: 4rem;

@@ -17,7 +17,7 @@ class SalonListItem extends Component {
             <div className="salon-list-item-content-center">
                 <h4>{this.props.name}</h4>
                 <RatingStars rating={this.props.rating}/>
-                <p>{this.props.adress}</p>
+                <p className="adress-p">{this.props.adress}</p>
             </div> 
             <div className="salon-list-item-content-right">
                 <p>{this.props.price} kr</p>

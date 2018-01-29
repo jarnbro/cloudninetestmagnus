@@ -25,6 +25,7 @@
         justify-content: center;
         align-items: center;
         font-size: 1rem;
+        color:$lightgrey;
     }
 
     ul {
@@ -33,14 +34,14 @@
         padding: 0;
         margin:0;
 
-
         li {
             position: relative;
             @include flex(row);
             justify-content: space-between;
             align-items:center; 
-            padding:0 1rem 1rem 1rem;
+            padding:0.2rem 1rem 0.2rem 1rem;
             width: 100;
+            height: auto;
             cursor:pointer;
             
             &:nth-child(2){
@@ -64,6 +65,12 @@
 
         .salon-list-item-content-center {
             margin-left:-10%;
+            p {
+                &.adress-p {
+                    margin-top:0.1rem;
+                    color:$lightgrey;
+                }
+            }
         }
 
         .salon-list-item-content-right {
@@ -80,7 +87,9 @@
                 font-weight: 200;
                 font-size:13px;
                 margin-top:0;
+                color:$lightgrey;
             }
         }
     }
 }
+
