@@ -3,6 +3,7 @@ $purple:purple;
 $beige:#B69F58;
 $grey:#202020;
 $lightgrey: #656565;
+$brightgrey: #EEEEEE;
 //Mixins
 @mixin flex($flex-dir) {
     display: flex;
@@ -44,24 +45,26 @@ hr {
     transform:translateX(-50%);
     height: 1px;
     width:90%;
-    background:lightgrey;
+    background:$brightgrey;
     border-radius: 20px;
     border:none;
 }
 
 .rating-stars {
+    z-index: 2000;
     .rating-stars-container {
         @include flex(row);
         justify-content: flex-start;
         align-items: center;
+        
         p {
             font-size: 13px;
             margin-left: 0.5rem;
             color:$lightgrey;
         }
         svg {
-            margin-right:0.1rem;
+            margin-right:0.17rem;
+            
         }
-
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RatingStars from './RatingStars';
+
 class SingleSalon extends Component {
     state = {
         sheduleIsVisible:false,
@@ -17,7 +18,6 @@ class SingleSalon extends Component {
     }
 
     render() {
-
         return (
             <section className = "single-salon-section">
                 <section className = "single-salon-hero">
@@ -30,15 +30,23 @@ class SingleSalon extends Component {
                         </g>
                     </svg>
                     <h2>{this.props.name}</h2>
+                    <RatingStars rating = {this.props.rating}/> 
                 </section>
                 <section className="info-shedule-switcher">
-                    <div id="info" className="is-active" onClick={() => this.setStateToShowCorrectElementOnClick("info")}>
+                    <div id="info" className= {
+                        this.state.infoIsVisible ? 'is-active':''
+                    } 
+                    onClick={() => this.setStateToShowCorrectElementOnClick("info")}>
                         <h3>Info</h3>
                     </div>
-                    <div id="shedule" className ="" onClick={() => this.setStateToShowCorrectElementOnClick("schedule")} >
+                    <div id="shedule" className= {
+                        this.state.sheduleIsVisible ? 'is-active':''
+                    }  
+                    onClick={() => this.setStateToShowCorrectElementOnClick("schedule")} >
                         <h3>Schema</h3>
                     </div>
                 </section>
+                <div className="single-salon-grey-divider"></div>
                {this.state.infoIsVisible && 
                <section className="salon-info-section">
                     <div> 

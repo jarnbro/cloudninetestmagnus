@@ -27,21 +27,23 @@ hr {
   transform: translateX(-50%);
   height: 1px;
   width: 90%;
-  background: lightgrey;
+  background: #EEEEEE;
   border-radius: 20px;
   border: none; }
 
-.rating-stars .rating-stars-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center; }
-  .rating-stars .rating-stars-container p {
-    font-size: 13px;
-    margin-left: 0.5rem;
-    color: #656565; }
-  .rating-stars .rating-stars-container svg {
-    margin-right: 0.1rem; }
+.rating-stars {
+  z-index: 2000; }
+  .rating-stars .rating-stars-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .rating-stars .rating-stars-container p {
+      font-size: 13px;
+      margin-left: 0.5rem;
+      color: #656565; }
+    .rating-stars .rating-stars-container svg {
+      margin-right: 0.17rem; }
 
 .salon-list-section .select-wrapper {
   display: flex;
@@ -67,6 +69,8 @@ hr {
   align-items: center;
   font-size: 1rem;
   color: #656565; }
+  .salon-list-section select:focus {
+    outline: none; }
 
 .salon-list-section ul {
   list-style-type: none;
@@ -144,21 +148,23 @@ hr {
   transform: translateX(-50%);
   height: 1px;
   width: 90%;
-  background: lightgrey;
+  background: #EEEEEE;
   border-radius: 20px;
   border: none; }
 
-.rating-stars .rating-stars-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center; }
-  .rating-stars .rating-stars-container p {
-    font-size: 13px;
-    margin-left: 0.5rem;
-    color: #656565; }
-  .rating-stars .rating-stars-container svg {
-    margin-right: 0.1rem; }
+.rating-stars {
+  z-index: 2000; }
+  .rating-stars .rating-stars-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .rating-stars .rating-stars-container p {
+      font-size: 13px;
+      margin-left: 0.5rem;
+      color: #656565; }
+    .rating-stars .rating-stars-container svg {
+      margin-right: 0.17rem; }
 
 header {
   height: 4rem;
@@ -175,8 +181,10 @@ header {
 
 .single-salon-section {
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  transition: all 0.4s ease; }
   .single-salon-section .single-salon-hero {
+    position: relative;
     height: 37vh;
     width: 100%;
     background-image: url("./images/hair.png");
@@ -184,17 +192,41 @@ header {
     background-size: cover;
     background-position: center center;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-end; }
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    z-index: 2; }
+    .single-salon-section .single-salon-hero:after {
+      content: '';
+      width: 100%;
+      height: 60%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      background-image: linear-gradient(-180deg, transparent 0%, #000000 100%); }
     .single-salon-section .single-salon-hero h2 {
-      margin: 0 0 1rem 1rem;
+      margin: 0 0 0 1rem;
       padding: 0;
-      color: white; }
-    .single-salon-section .single-salon-hero svg {
+      color: white;
+      z-index: 2000;
+      font-size: 22px; }
+    .single-salon-section .single-salon-hero .arrow-icon {
       position: absolute;
       top: 1.5rem;
       left: 1rem; }
+    .single-salon-section .single-salon-hero .rating-stars {
+      margin: 0 0 0.5rem 1rem; }
+      .single-salon-section .single-salon-hero .rating-stars .rating-stars-container p {
+        color: white; }
+      .single-salon-section .single-salon-hero .rating-stars .rating-stars-container svg {
+        height: 0.9rem;
+        width: 0.9rem;
+        margin-left: 0.1rem; }
+  .single-salon-section .single-salon-grey-divider {
+    height: 1rem;
+    background: #EEEEEE;
+    width: 100%; }
   .single-salon-section .info-shedule-switcher {
     display: flex;
     flex-direction: row;
@@ -203,7 +235,8 @@ header {
     .single-salon-section .info-shedule-switcher div {
       cursor: pointer;
       width: 50%;
-      text-align: center; }
+      text-align: center;
+      border-bottom: 0.5px solid #EEEEEE; }
       .single-salon-section .info-shedule-switcher div h3 {
         font-family: 'Helvetica';
         font-weight: 200;
@@ -220,7 +253,7 @@ header {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      min-height: 4rem;
+      padding: 1.2rem 0;
       width: 90%;
       position: relative; }
       .single-salon-section .salon-info-section div svg {
@@ -233,6 +266,7 @@ header {
         .single-salon-section .salon-info-section div a :last-child, .single-salon-section .salon-info-section div p :last-child {
           border: none; }
       .single-salon-section .salon-info-section div hr {
-        width: 100%; }
+        width: 100%;
+        bottom: -15%; }
       .single-salon-section .salon-info-section div:last-child hr {
-        border: none; }
+        display: none; }

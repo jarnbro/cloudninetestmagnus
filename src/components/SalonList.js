@@ -77,7 +77,7 @@ class SalonList extends Component {
                     teleNumber = {currentSalon.teleNumber}
                     mapsUrl = {currentSalon.mapsUrl}
                     imageUrl = {currentSalon.imageUrl}
-
+                    rating = {currentSalon.rating}
                 />}
                 
             </ul>

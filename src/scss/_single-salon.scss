@@ -1,28 +1,67 @@
 .single-salon-section {
     height: 100vh;
     width:100%;
+    transition:all 0.4s ease;
 
     .single-salon-hero {
+        position: relative;
         height: 37vh;
         width:100%;
         background-image:url('./images/hair.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        @include flex(row);
-        justify-content: flex-start;
-        align-items: flex-end;
+        @include flex(column);
+        justify-content: flex-end;
+        align-items: flex-start;
+        z-index: 2;
+        &:after {
+            content:'';
+            width: 100%;
+            height: 60%;
+            position: absolute;
+            bottom:0;
+            left:0;
+            z-index: 1000;
+            background-image: linear-gradient(-180deg, transparent 0%, #000000 100%);
+        }
+
         h2 {
-            margin:0 0 1rem 1rem;
+            margin:0 0 0 1rem;
             padding:0;
             color:white;
+            z-index: 2000;
+            font-size: 22px;
         }
-        svg {
+        
+        .arrow-icon {
             position: absolute;
             top:1.5rem;
             left:1rem;
         }
         
+        .rating-stars {
+            margin:0 0 0.5rem 1rem;
+            .rating-stars-container {
+                
+                p {
+                    color:white;
+                }
+                svg {
+                    height: 0.9rem;
+                    width: 0.9rem;
+                    margin-left: 0.1rem;
+                }
+            }
+        }
+
+        
+    }
+    
+    .single-salon-grey-divider {
+        height: 1rem;
+        background:$brightgrey;
+        width: 100%;
     }
     
     .info-shedule-switcher {
@@ -33,7 +72,7 @@
             cursor: pointer;
             width:50%;
             text-align: center;
-            
+            border-bottom: 0.5px solid $brightgrey;
             h3 {
                 font-family: 'Helvetica';
                 font-weight: 200;
@@ -55,7 +94,7 @@
             @include flex(row);
             justify-content: flex-start;
             align-items: center;
-            min-height:4rem;
+            padding:1.2rem 0;
             width:90%;
             position: relative;
 
@@ -75,11 +114,16 @@
 
             hr {
                 width:100%;
+                bottom:-15%;
             }
 
             &:last-child {
                 hr {
-                    border:none;
+                    display: none;
+                }
+                
+                p {
+            
                 }
             }
         }
