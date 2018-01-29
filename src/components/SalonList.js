@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import SalonListItem from "./SalonListItem";
 import SingleSalon from "./SingleSalon";
-import SalonFilterSelect from "./SalonFilterSelect";
 import Header from "./Header";
-
-
-
 import data from '../data.json';
 
 class SalonList extends Component {
@@ -18,10 +14,6 @@ class SalonList extends Component {
     fetchAllSalons = () => {
         this.setState({salons:data});
     }   
-
-    componentWillMount(){
-        this.fetchAllSalons();
-    }
     
     salonOnClick = (x) => {
         let thisSalon = [...this.state.salons].filter((elem)=>{
@@ -36,6 +28,10 @@ class SalonList extends Component {
         this.setState({
             selectOptionValue: e.target.value
         });
+    }
+
+    componentWillMount(){
+        this.fetchAllSalons();
     }
 
     render() {
