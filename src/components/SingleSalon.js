@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import RatingStars from './RatingStars';
 class SingleSalon extends Component {
     state = {
         sheduleIsVisible:false,
@@ -21,7 +21,7 @@ class SingleSalon extends Component {
         return (
             <section className = "single-salon-section">
                 <section className = "single-salon-hero">
-                    <svg className = "arrow-icon" width="11px" height="19px" viewBox="0 0 11 19" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <svg onClick={this.props.onClick} className = "arrow-icon" width="11px" height="19px" viewBox="0 0 11 19" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <defs></defs>
                         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                             <g id="Lista" transform="translate(-14.000000, -33.000000)" stroke="white">

@@ -8,13 +8,14 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: MillerBannerLight;
-  color: #202020; }
+  color: #202020;
+  font-weight: 200; }
 
 a {
   text-decoration: none;
   color: inherit; }
 
-p, a {
+p, a, select {
   font-family: 'Helvetica';
   color: #202020;
   font-weight: 200; }
@@ -29,18 +30,29 @@ hr {
   background: lightgrey;
   border-radius: 20px; }
 
+.salon-list-section .select-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 1rem; }
+  .salon-list-section .select-wrapper svg {
+    position: absolute;
+    right: 1rem;
+    z-index: 1; }
+
 .salon-list-section select {
+  z-index: 1000;
   border: none;
   border-radius: 0%;
   width: 100%;
-  height: 2rem;
-  background: white;
+  height: 3rem;
+  background: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #B69F58;
-  border-top: 1px solid #B69F58; }
+  font-size: 1rem; }
 
 .salon-list-section ul {
   list-style-type: none;
@@ -52,18 +64,37 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 1rem;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
     width: 100;
     cursor: pointer; }
-  .salon-list-section ul .salon-list-item-content-center {
-    margin-left: -30%; }
-    .salon-list-section ul .salon-list-item-content-center h4 {
+    .salon-list-section ul li:nth-child(2) {
+      border-top: 1px solid #B69F58; }
+    .salon-list-section ul li h4 {
       margin: 0.75rem 0 0 0;
-      font-size: 20px; }
-    .salon-list-section ul .salon-list-item-content-center p {
+      font-size: 20px;
+      font-weight: 400; }
+    .salon-list-section ul li p {
       font-size: 15px;
       font-family: 'Helvetica'; }
+      .salon-list-section ul li p.salon-time-p {
+        margin-bottom: 4rem; }
+  .salon-list-section ul .salon-list-item-content-center {
+    margin-left: -10%; }
+  .salon-list-section ul .salon-list-item-content-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: -10%;
+    height: 4rem; }
+    .salon-list-section ul .salon-list-item-content-right :first-child {
+      font-weight: 400;
+      margin-top: 0; }
+    .salon-list-section ul .salon-list-item-content-right :last-child {
+      font-weight: 200;
+      font-size: 13px;
+      margin-top: 0; }
 
 @font-face {
   font-family: MillerBannerLight;
@@ -75,13 +106,14 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: MillerBannerLight;
-  color: #202020; }
+  color: #202020;
+  font-weight: 200; }
 
 a {
   text-decoration: none;
   color: inherit; }
 
-p, a {
+p, a, select {
   font-family: 'Helvetica';
   color: #202020;
   font-weight: 200; }
@@ -101,10 +133,13 @@ header {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center; }
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #B69F58; }
   header h1 {
     font-family: MillerBannerLight; }
+  header svg {
+    margin: 0 1rem; }
 
 .single-salon-section {
   height: 100vh;

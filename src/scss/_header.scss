@@ -1,12 +1,17 @@
 header {
     height: 4rem;
-    width:100%;
+    width: 100%;
     @include flex(row);
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-     
+    border-bottom:1px solid $beige;
+    
     h1 {
         font-family: MillerBannerLight;
+    }
+
+    svg{
+        margin: 0 1rem;
     }
 }
 

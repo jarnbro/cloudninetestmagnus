@@ -3,7 +3,7 @@
         {   
             "id":1,
             "name":"Hår och Fön",
-            "rating":5,
+            "rating":[3,5,5,5,5,5,3,3,1,5],
             "adress":"Rådmansgatan 4",
             "price":400,
             "appointmentTime":30,
@@ -17,7 +17,7 @@
         {
             "id":2,
             "name":"Hårizont",
-            "rating":3,
+            "rating":[5,5,5,5,5,5,5,5],
             "adress":"Rådmansgatan 4",
             "price":200,
             "appointmentTime":30,
@@ -31,7 +31,7 @@
         {
             "id":3,
             "name":"Håris",
-            "rating":2,
+            "rating":[3,2,2,2,2,2,2,4],
             "adress":"Rådmansgatan 4",
             "price":500,
             "appointmentTime":30,
@@ -45,7 +45,7 @@
         {
             "id":4,
             "name":"Hår och Fin",
-            "rating":4,
+            "rating":[3,5,2,3,4,5,5],
             "adress":"Rådmansgatan 4",
             "price":300,
             "appointmentTime":30,
@@ -59,7 +59,7 @@
         {
             "id":5,
             "name":"Håret",
-            "rating":3,
+            "rating":[3,5,2,3,4,5],
             "adress":"Rådmansgatan 4",
             "price":400,
             "appointmentTime":30,
@@ -73,7 +73,7 @@
         {
             "id":6,
             "name":"Hårstället",
-            "rating":5,
+            "rating":[3,5,2,3,4,2,3,5],
             "adress":"Rådmansgatan 4",
             "price":1100,
             "appointmentTime":30,
@@ -87,7 +87,7 @@
         {
             "id":7,
             "name":"Håraz Engdhal",
-            "rating":4,
+            "rating":[3,5,2,3,4,5,2,1],
             "adress":"Rådmansgatan 4",
             "price":900,
             "appointmentTime":30,
@@ -101,7 +101,7 @@
         {
             "id":8,
             "name":"Hårtork",
-            "rating":3,
+            "rating":[3,5,2,3,4,5,6],
             "adress":"Rådmansgatan 4",
             "price":700,
             "appointmentTime":30,
