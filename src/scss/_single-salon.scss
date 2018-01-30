@@ -1,7 +1,6 @@
 .single-salon-section {
     height: 100vh;
     width:100%;
-    transition:all 0.4s ease;
 
     .single-salon-hero {
         position: relative;
@@ -15,6 +14,7 @@
         justify-content: flex-end;
         align-items: flex-start;
         z-index: 2;
+
         &:after {
             content:'';
             width: 100%;
@@ -38,6 +38,14 @@
             position: absolute;
             top:1.5rem;
             left:1rem;
+            cursor:pointer;
+        }
+
+        .heart-icon {
+            position: absolute;
+            top:1.5rem;
+            right:1rem;
+            cursor:pointer;
         }
         
         .rating-stars {
@@ -47,6 +55,7 @@
                 p {
                     color:white;
                 }
+
                 svg {
                     height: 0.9rem;
                     width: 0.9rem;
@@ -54,8 +63,6 @@
                 }
             }
         }
-
-        
     }
     
     .single-salon-grey-divider {
@@ -68,11 +75,12 @@
         @include flex(row);
         justify-content: center;
         align-items: center;
+
         div {
             cursor: pointer;
             width:50%;
             text-align: center;
-            border-bottom: 0.5px solid $brightgrey;
+            border:none;
             h3 {
                 font-family: 'Helvetica';
                 font-weight: 200;
@@ -89,12 +97,18 @@
         @include flex(column);
         justify-content: center;
         align-items: center;
+        opacity: 0;
         
+        &.is-active {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
         div {
             @include flex(row);
             justify-content: flex-start;
             align-items: center;
-            padding:1.2rem 0;
+            padding:1rem 0;
             width:90%;
             position: relative;
 
@@ -102,13 +116,14 @@
                 height: 1rem;
                 width: 1rem;
                 display: inline-block;
+                z-index: 2000;
             }
 
             a, p {
                 font-size: 15px;
                 margin:000 1rem;
                 :last-child {
-                    border:none;
+                    border:none; 
                 }
             }
 
@@ -121,13 +136,10 @@
                 hr {
                     display: none;
                 }
-                
                 p {
-            
+                    margin:0;
                 }
             }
         }
     }
-
-
 }

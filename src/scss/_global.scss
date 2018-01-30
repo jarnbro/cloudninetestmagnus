@@ -4,6 +4,7 @@ $beige:#B69F58;
 $grey:#202020;
 $lightgrey: #656565;
 $brightgrey: #EEEEEE;
+
 //Mixins
 @mixin flex($flex-dir) {
     display: flex;
@@ -64,7 +65,6 @@ hr {
         }
         svg {
             margin-right:0.17rem;
-            
         }
     }
 }

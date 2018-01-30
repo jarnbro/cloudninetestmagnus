@@ -87,7 +87,7 @@ hr {
     width: 100;
     height: auto;
     cursor: pointer; }
-    .salon-list-section ul li:nth-child(2) {
+    .salon-list-section ul li:nth-child(1) {
       border-top: 1px solid #B69F58; }
     .salon-list-section ul li h4 {
       margin: 0.75rem 0 0 0;
@@ -181,8 +181,7 @@ header {
 
 .single-salon-section {
   height: 100vh;
-  width: 100%;
-  transition: all 0.4s ease; }
+  width: 100%; }
   .single-salon-section .single-salon-hero {
     position: relative;
     height: 37vh;
@@ -214,7 +213,13 @@ header {
     .single-salon-section .single-salon-hero .arrow-icon {
       position: absolute;
       top: 1.5rem;
-      left: 1rem; }
+      left: 1rem;
+      cursor: pointer; }
+    .single-salon-section .single-salon-hero .heart-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 1rem;
+      cursor: pointer; }
     .single-salon-section .single-salon-hero .rating-stars {
       margin: 0 0 0.5rem 1rem; }
       .single-salon-section .single-salon-hero .rating-stars .rating-stars-container p {
@@ -236,7 +241,7 @@ header {
       cursor: pointer;
       width: 50%;
       text-align: center;
-      border-bottom: 0.5px solid #EEEEEE; }
+      border: none; }
       .single-salon-section .info-shedule-switcher div h3 {
         font-family: 'Helvetica';
         font-weight: 200;
@@ -247,19 +252,24 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    opacity: 0; }
+    .single-salon-section .salon-info-section.is-active {
+      opacity: 1;
+      transition: opacity 1s ease; }
     .single-salon-section .salon-info-section div {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      padding: 1.2rem 0;
+      padding: 1rem 0;
       width: 90%;
       position: relative; }
       .single-salon-section .salon-info-section div svg {
         height: 1rem;
         width: 1rem;
-        display: inline-block; }
+        display: inline-block;
+        z-index: 2000; }
       .single-salon-section .salon-info-section div a, .single-salon-section .salon-info-section div p {
         font-size: 15px;
         margin: 000 1rem; }
@@ -270,17 +280,20 @@ header {
         bottom: -15%; }
       .single-salon-section .salon-info-section div:last-child hr {
         display: none; }
+      .single-salon-section .salon-info-section div:last-child p {
+        margin: 0; }
 
-.trans-enter {
-  opacity: 0.01; }
+.fade-enter {
+  opacity: 0; }
 
-.trans-enter.trans-enter-active {
+.fade-enter.fade-enter-active {
   opacity: 1;
-  transition: 2000ms ease-out; }
+  transition: opacity 300ms ease-in; }
 
-.trans-leave {
+.fade-exit {
   opacity: 1; }
 
-.trans-leave.trans-leave-active {
-  opacity: 0.01;
-  transition: 2000ms ease-out; }
+.fade-exit.fade-exit-active {
+  display: none;
+  opacity: 0;
+  transition: opacity 00ms ease-in; }
